@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MEEVEGGIES มีเวจจี้ส์</title>
+<meta name="description" content="MEEVEGGIES (มีเวจจี้ส์) ผัก ผลไม้ และถั่วอบกรอบ ล็อตแรก 5 รส สั่งผ่าน LINE @883uaaga หรือ Shopee">
+<meta name="theme-color" content="#151615">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MEEVEGGIES">
+<meta property="og:title" content="MEEVEGGIES มีเวจจี้ส์">
+<meta property="og:description" content="ผักผลไม้อบกรอบ ล็อตแรก 5 รส เริ่มต้น 179 บาท สั่งผ่าน LINE @883uaaga หรือ Shopee">
+<meta property="og:url" content="https://huachxng.github.io/meeveggies/">
+<meta property="og:image" content="https://huachxng.github.io/meeveggies/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: the page is built like the pouch. A matte-black top band carries the badge and headline,
+   a frosted "window" strip shows the five first-lot flavours, then the paper-light shop:
+   products (signature card wide), the LINE order sheet, what's next, about, and a black contact band to close. */
+:root{
+  --paper:#f3f4f1; --paper-2:#e8eae5; --card:#ffffff; --ink:#151615; --muted:#5b605a; --rule:#d9dcd6;
+  --pouch:#151615; --pouch-2:#222422; --on-pouch:#f4f5f2; --on-pouch-muted:#b4b9b2; --pouch-rule:#3a3d3a;
+  --window:rgba(255,255,255,.07); --cap:rgba(14,15,14,.74);
+  --line:#06c755; --on-line:#0b0c0b; --line-text:#04773a;
+  --shopee:#d63a1a; --on-shopee:#ffffff; --shopee-text:#b8300f;
+  --dot:rgba(255,255,255,.6); --dot-on:#ffffff; --dot-ring:rgba(0,0,0,.28);
+  --qr-fg:#151615; --qr-bg:#ffffff;
+  --ring:var(--ink);
+  --display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#121312; --paper-2:#181a18; --card:#1c1d1c; --ink:#eef0ec; --muted:#a3a8a1; --rule:#2f322f;
+  --pouch:#0a0b0a; --pouch-2:#171917; --on-pouch:#f4f5f2; --on-pouch-muted:#a9aea7; --pouch-rule:#2e312e;
+  --window:rgba(255,255,255,.05); --cap:rgba(10,11,10,.78);
+  --line:#06c755; --on-line:#0b0c0b; --line-text:#4fdc8c;
+  --shopee:#d63a1a; --on-shopee:#ffffff; --shopee-text:#ff8a6a;
+  --dot:rgba(255,255,255,.6); --dot-on:#ffffff; --dot-ring:rgba(0,0,0,.28);
+  --qr-fg:#151615; --qr-bg:#ffffff; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#121312; --paper-2:#181a18; --card:#1c1d1c; --ink:#eef0ec; --muted:#a3a8a1; --rule:#2f322f;
+  --pouch:#0a0b0a; --pouch-2:#171917; --on-pouch:#f4f5f2; --on-pouch-muted:#a9aea7; --pouch-rule:#2e312e;
+  --window:rgba(255,255,255,.05); --cap:rgba(10,11,10,.78);
+  --line:#06c755; --on-line:#0b0c0b; --line-text:#4fdc8c;
+  --shopee:#d63a1a; --on-shopee:#ffffff; --shopee-text:#ff8a6a;
+  --dot:rgba(255,255,255,.6); --dot-on:#ffffff; --dot-ring:rgba(0,0,0,.28);
+  --qr-fg:#151615; --qr-bg:#ffffff; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.has-bar{padding-bottom:76px}
+img{max-width:100%;display:block}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+:focus-visible{outline:2px solid var(--ring);outline-offset:3px;border-radius:6px}
+.top,.hero,.contact,.bar{--ring:var(--on-pouch)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:720px){.wrap{padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:12px;line-height:1.3;letter-spacing:.2em;text-transform:uppercase}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 15px/1.2 var(--body);text-decoration:none;border-radius:999px;padding:12px 20px;border:1px solid transparent;cursor:pointer;min-height:46px;text-align:center}
+.btn.sm{padding:8px 14px;min-height:38px;font-size:14px}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-line{background:var(--line);color:var(--on-line)}
+.btn-line:hover{filter:brightness(1.07)}
+.btn-shopee{background:var(--shopee);color:var(--on-shopee)}
+.btn-shopee:hover{filter:brightness(1.08)}
+.btn-light{background:var(--on-pouch);color:var(--pouch)}
+.btn-ghost{background:transparent;color:var(--on-pouch);border-color:var(--pouch-rule)}
+.btn-ghost:hover{border-color:var(--on-pouch-muted)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-outline{background:var(--card);color:var(--ink);border-color:var(--rule)}
+.btn-outline:hover{border-color:var(--ink)}
+.btn[aria-disabled="true"]{opacity:.42;pointer-events:none}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--pouch);color:var(--on-pouch);border-bottom:1px solid var(--pouch-rule)}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:62px}
+.brand{display:flex;align-items:center;text-decoration:none;flex:none}
+.brand img{width:150px;height:auto}
+.nav{display:none;gap:24px;margin-left:auto;font-size:14.5px}
+.nav a{text-decoration:none;color:var(--on-pouch-muted)}
+.nav a:hover{color:var(--on-pouch)}
+.top-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
+@media (min-width:980px){.nav{display:flex}.top-actions{margin-left:10px}}
+@media (max-width:400px){.brand img{width:118px}.top .wrap{gap:10px}.top-actions{gap:8px}}
+.lang{display:flex;border:1px solid var(--pouch-rule);border-radius:999px;padding:2px}
+.lang button{font:600 12px/1 var(--display);letter-spacing:.08em;color:var(--on-pouch-muted);background:transparent;border:0;border-radius:999px;padding:8px 10px;cursor:pointer;min-height:32px}
+.lang button[aria-pressed="true"]{background:var(--on-pouch);color:var(--pouch)}
+
+/* Hero: pouch front */
+.hero{background:var(--pouch);color:var(--on-pouch)}
+.hero-top{display:grid;gap:28px;padding-block:34px 30px}
+@media (min-width:880px){.hero-top{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:end;padding-block:56px 44px;gap:48px}}
+.badge{width:64px;height:64px}
+.hero .eyebrow{color:var(--on-pouch-muted);margin-top:18px}
+.hero h1{font-weight:700;font-size:clamp(36px,6.4vw,64px);line-height:1.08;letter-spacing:-.01em;margin-top:10px}
+.hero h1 span{display:block}
+.hero .lede{color:var(--on-pouch-muted);font-size:clamp(16px,1.8vw,18px);max-width:50ch;margin-top:16px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.ticket{border:1px dashed var(--pouch-rule);border-radius:18px;padding:22px 24px;display:grid;gap:4px;background:var(--pouch-2);max-width:360px}
+@media (min-width:880px){.ticket{justify-self:end;width:100%}}
+.ticket .eyebrow{color:var(--on-pouch-muted);margin:0 0 8px}
+.ticket .from{font-size:15px;color:var(--on-pouch-muted)}
+.ticket .big{font:600 clamp(48px,7vw,68px)/1 var(--mono);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.ticket .big small{font-size:.42em;margin-left:6px;letter-spacing:0}
+.ticket .sub{font-size:14px;color:var(--on-pouch-muted);margin-top:8px}
+.window{background:var(--window);border-block:1px solid var(--pouch-rule);padding-block:16px}
+.panes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+@media (max-width:759px){
+  .window .wrap{padding-left:0;padding-right:0}
+  .panes{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;scrollbar-width:none;
+    padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+    scroll-padding-left:max(16px,env(safe-area-inset-left,0px))}
+  .panes::-webkit-scrollbar{display:none}
+  .pane{flex:0 0 44%;scroll-snap-align:start}
+}
+.pane{position:relative;display:block;text-decoration:none;color:var(--on-pouch);border-radius:10px;overflow:hidden;background:var(--pouch-2);min-width:0}
+.pane img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.pane:hover img{transform:scale(1.04)}
+.pane .cap{position:absolute;left:8px;right:8px;bottom:8px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:1px 6px;background:var(--cap);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-radius:7px;padding:6px 9px;font-size:13px;line-height:1.3}
+.pane .cap b{font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pane .cap span{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+.pane .cap i{grid-column:1/-1;font-style:normal;font-size:11.5px;color:var(--on-pouch-muted)}
+@media (prefers-reduced-motion:no-preference){
+  .pane{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .pane:nth-child(2){animation-delay:.06s}.pane:nth-child(3){animation-delay:.12s}
+  .pane:nth-child(4){animation-delay:.18s}.pane:nth-child(5){animation-delay:.24s}
+  @keyframes rise{from{transform:translateY(16px)}to{transform:none}}
+}
+.hero{padding-bottom:30px}
+
+/* Sections */
+.sec{padding-block:56px}
+@media (min-width:880px){.sec{padding-block:84px}}
+.sec-alt{background:var(--paper-2)}
+.sec-head{display:grid;gap:10px;margin-bottom:28px;max-width:64ch}
+.sec-head .eyebrow{color:var(--muted)}
+.sec-head h2{font-weight:600;font-size:clamp(27px,3.6vw,38px);line-height:1.15}
+.sec-head .lede{color:var(--muted)}
+
+/* Products */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:720px){.grid{gap:18px}}
+.card{container-type:inline-size;background:var(--card);border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden;min-width:0;transition:border-color .2s}
+.card.sig{grid-column:1/-1}
+.card.on{border-color:var(--ink)}
+.card-in{display:flex;flex-direction:column;height:100%}
+.media{position:relative;background:var(--paper-2)}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.track::-webkit-scrollbar{display:none}
+.track img{flex:0 0 100%;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;scroll-snap-align:start}
+.dots{position:absolute;left:0;right:0;bottom:4px;display:flex;justify-content:center}
+.dots button{width:26px;height:26px;border:0;background:transparent;padding:0;cursor:pointer;display:grid;place-items:center}
+.dots button::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--dot);box-shadow:0 0 0 1px var(--dot-ring);transition:transform .2s}
+.dots button[aria-current="true"]::before{background:var(--dot-on);transform:scale(1.3)}
+.stamp{position:absolute;top:10px;left:10px;background:var(--pouch);color:var(--on-pouch);font:600 11px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px;border-radius:999px}
+.info{padding:14px 14px 16px;display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}
+.info .kind{font:600 11px/1.3 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.info h3{font-weight:600;font-size:19px;line-height:1.25}
+.info .alt{font-size:13.5px;color:var(--muted);margin-top:-4px}
+.info .meta{font-size:13px;color:var(--muted)}
+.info .desc{font-size:15px;line-height:1.6}
+.buy{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:12px}
+.price{font:600 23px/1 var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.price small{font-size:14px;margin-left:3px}
+.price .per{font:500 13px/1 var(--mono);color:var(--muted);margin-left:6px}
+.shp{font-size:13.5px;font-weight:600;color:var(--shopee-text);text-decoration:none;margin-top:10px;align-self:flex-start}
+.shp:hover{text-decoration:underline;text-underline-offset:3px}
+.qty{display:flex;align-items:center;gap:4px}
+.qty button{width:38px;height:38px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);font:500 19px/1 var(--body);cursor:pointer;display:grid;place-items:center}
+.qty button:hover{border-color:var(--ink)}
+.qty button[disabled]{opacity:.35;cursor:not-allowed}
+.qty output{min-width:28px;text-align:center;font:600 16px var(--mono);font-variant-numeric:tabular-nums}
+@container (max-width:299px){
+  .info{padding:12px 12px 14px}
+  .info .desc{display:none}
+  .info h3{font-size:16.5px}
+  .buy{flex-direction:column;align-items:stretch;gap:10px}
+  .price{font-size:20px}
+  .buy .add{width:100%}
+  .qty{justify-content:space-between}
+  .shp{margin-top:8px;font-size:13px}
+}
+.nw{white-space:nowrap}
+@container (min-width:440px){
+  .card-in{display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);min-height:52.5cqi}
+  .media{min-height:100%}
+  .track{position:absolute;inset:0}
+  .track img{height:100%;aspect-ratio:auto}
+  .info{padding:22px 24px;gap:8px}
+  .info h3{font-size:22px}
+}
+@container (min-width:860px){
+  .card-in{grid-template-columns:minmax(0,44%) minmax(0,1fr);min-height:55cqi}
+  .info{padding:44px 48px;gap:10px;justify-content:center}
+  .info h3{font-size:clamp(30px,3.2vw,40px)}
+  .info .alt{font-size:15px}
+  .info .desc{font-size:17px;max-width:42ch}
+  .buy{margin-top:18px;justify-content:flex-start;gap:24px}
+  .price{font-size:30px}
+}
+
+/* Order */
+.order-grid{display:grid;gap:36px}
+@media (min-width:920px){.order-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start;gap:56px}
+  .sheet{grid-column:2;grid-row:1}.steps{grid-column:1;grid-row:1}}
+.sheet{background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:20px}
+@media (min-width:720px){.sheet{padding:28px}}
+.sheet h3{font-size:15px;font-weight:600;margin:0 0 10px;font-family:var(--body)}
+.lines{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.lines li{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.lines li .nm{min-width:0}
+.lines .x{font-family:var(--mono);color:var(--muted);font-size:14px;margin-left:6px}
+.amt{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.lines .empty{color:var(--muted);display:block}
+.sumrow{display:flex;justify-content:space-between;gap:12px;padding-top:10px;margin-top:10px;border-top:1px dashed var(--rule)}
+.sumrow + .sumrow{margin-top:0;border-top:0;padding-top:4px}
+.sumrow.total{font-weight:600;font-size:19px}
+.fields{display:grid;gap:12px;margin-top:22px}
+@media (min-width:560px){.fields{grid-template-columns:1fr 1fr}.fields .full{grid-column:1/-1}}
+label{display:grid;gap:5px;font-size:13.5px;color:var(--muted)}
+input,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:11px 12px;width:100%}
+input:focus,textarea:focus{border-color:var(--ink);outline:none}
+textarea{min-height:84px;resize:vertical}
+.msgwrap{margin-top:22px}
+.msg{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--paper);border:1px dashed var(--rule);border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.6;min-height:56px}
+.msg.is-empty{color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.actions .btn-line{flex:1 1 230px}
+.actions .btn-outline{flex:0 1 auto}
+.status{font-size:14px;color:var(--line-text);min-height:1.5em;margin-top:10px;font-weight:500}
+.hint{font-size:13px;color:var(--muted);margin-top:4px}
+.steps h3{font-size:20px;font-weight:600;margin-bottom:18px}
+.steps ol{list-style:none;margin:0;padding:0;display:grid;gap:18px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;counter-increment:s;align-items:start}
+.steps li::before{content:counter(s);width:38px;height:38px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;font:600 15px/1 var(--mono)}
+.steps li p{padding-top:6px}
+.fine{font-size:13px;color:var(--muted);margin-top:26px;padding-top:16px;border-top:1px solid var(--rule)}
+.alt-shop{margin-top:26px;border:1px solid var(--rule);border-radius:16px;padding:18px 20px;background:var(--card);display:grid;gap:8px;justify-items:start}
+.alt-shop h4{margin:0;font:600 16px/1.35 var(--body)}
+.alt-shop p{font-size:14.5px;color:var(--muted)}
+
+/* Coming next */
+.soon{display:grid;gap:28px}
+@media (min-width:920px){.soon{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:56px;align-items:start}
+  .soon .sec-head{position:sticky;top:calc(96px + env(safe-area-inset-top,0px));margin:0}}
+.soon-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 10px}
+@media (min-width:720px){.soon-grid{gap:22px 18px}}
+.soon-tile{display:flex;flex-direction:column;gap:4px;text-decoration:none;color:var(--ink);min-width:0}
+.soon-tile img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:10px;background:var(--card);margin-bottom:4px}
+.soon-tile .n{font-weight:600;font-size:14px;line-height:1.3}
+.soon-tile .e{font:600 10.5px/1.35 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.soon-tile .go{font-size:12.5px;line-height:1.35;color:var(--line-text);font-weight:600;margin-top:2px}
+.soon-tile:hover .go{text-decoration:underline}
+@media (min-width:720px){.soon-tile .n{font-size:16px}.soon-tile .go{font-size:13.5px}}
+
+/* About */
+.about{display:grid;gap:30px}
+@media (min-width:880px){.about{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;gap:64px}}
+.about .copy{display:grid;gap:14px;max-width:60ch}
+.about .copy p{color:var(--ink)}
+.about figure{margin:0}
+.about figure img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:18px;max-height:640px}
+@media (min-width:880px){.about figure{max-width:440px;justify-self:end;width:100%}}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px;margin:12px 0 0}
+.facts div{border-top:1px solid var(--rule);padding-top:10px;min-width:0}
+.facts dt{font:600 11px/1.3 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:4px 0 0;font-weight:500}
+
+/* Contact band */
+.contact{background:var(--pouch);color:var(--on-pouch);padding-top:60px}
+.contact-grid{display:grid;gap:32px}
+@media (min-width:880px){.contact-grid{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:center}}
+.contact .eyebrow{color:var(--on-pouch-muted)}
+.contact h2{font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.12;margin-top:10px}
+.contact .lede{color:var(--on-pouch-muted);margin-top:12px;max-width:48ch}
+.idrow{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:22px}
+.idbox{font:600 19px/1 var(--mono);border:1px dashed var(--pouch-rule);border-radius:10px;padding:12px 14px;user-select:all;-webkit-user-select:all}
+.contact .cta{margin-top:18px}
+.links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:22px;font-size:14.5px}
+.links a{color:var(--on-pouch);text-underline-offset:3px}
+.qr{background:var(--qr-bg);color:var(--qr-fg);border-radius:18px;padding:18px 18px 14px;width:min(250px,100%);display:grid;gap:10px}
+@media (min-width:880px){.qr{justify-self:end}}
+.qr svg{display:block;width:100%;height:auto}
+.qr p{font-size:12.5px;line-height:1.45;text-align:center}
+.qr .qid{font:600 14px/1 var(--mono);text-align:center}
+.foot{border-top:1px solid var(--pouch-rule);margin-top:56px;padding-block:22px 26px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;font-size:13px;color:var(--on-pouch-muted)}
+.foot img{width:120px;height:auto;opacity:.9}
+.foot .fine2{max-width:70ch}
+
+/* Sticky order bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--pouch);color:var(--on-pouch);border-top:1px solid var(--pouch-rule);
+  padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.bar .in{max-width:1064px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.bar small{display:block;color:var(--on-pouch-muted);font-size:12.5px;line-height:1.3}
+.bar .sum{font:600 21px/1.2 var(--mono);font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="MEEVEGGIES"><img src="img/logo-wordmark.png" alt="MEEVEGGIES. Since 2026" width="419" height="84"></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#products" data-t="nav_products">สินค้า</a>
+      <a href="#order" data-t="nav_order">วิธีสั่ง</a>
+      <a href="#soon" data-t="nav_soon">รสต่อไป</a>
+      <a href="#about" data-t="nav_about">เกี่ยวกับเรา</a>
+      <a href="#contact" data-t="nav_contact">ติดต่อ</a>
+    </nav>
+    <div class="top-actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="th" aria-pressed="true">TH</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-line sm js-add" href="https://lin.ee/ZuS3iBGh" target="_blank" rel="noopener" data-t="add_line">แอด LINE</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-top">
+    <div>
+      <img class="badge" src="img/logo-badge.png" alt="" width="120" height="120">
+      <p class="eyebrow">Founders' Lot · Since 2026</p>
+      <h1 id="h1"></h1>
+      <p class="lede" id="hero-lede"></p>
+      <div class="cta">
+        <a class="btn btn-light" href="#products" data-t="cta_shop">เลือกรสที่ชอบ</a>
+        <a class="btn btn-line js-add" href="https://lin.ee/ZuS3iBGh" target="_blank" rel="noopener" data-t="cta_line">แอด LINE</a>
+        <a class="btn btn-shopee js-shopee" href="https://s.shopee.co.th/3Vl2ejMdsw" target="_blank" rel="noopener" data-t="cta_shopee">สั่งซื้อบน Shopee</a>
+      </div>
+    </div>
+    <div class="ticket" aria-labelledby="ticket-from">
+      <p class="eyebrow">Founders' Lot</p>
+      <span class="from" id="ticket-from" data-t="ticket_from">เริ่มต้น</span>
+      <span class="big"><span id="ticket-min">179</span><small>฿</small></span>
+      <span class="sub" id="ticket-sub"></span>
+    </div>
+  </div>
+  <div class="window" aria-label="First lot">
+    <div class="wrap"><div class="panes" id="panes"></div></div>
+  </div>
+</section>
+
+<main>
+  <section class="sec" id="products">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow">First lot · 5 flavours</p>
+        <h2 data-t="prod_h2">MEEVEGGIES. Delights</h2>
+        <p class="lede" id="prod-lede"></p>
+      </header>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="order">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow">Order on LINE</p>
+        <h2 id="order-h2"></h2>
+      </header>
+      <div class="order-grid">
+        <div class="sheet" aria-labelledby="sheet-h">
+          <h3 id="sheet-h" data-t="sheet_items">รายการที่เลือก</h3>
+          <ul class="lines" id="lines"></ul>
+          <div id="sums"></div>
+          <div class="fields">
+            <label for="f-name"><span data-t="f_name">ชื่อผู้รับ</span><input id="f-name" autocomplete="name"></label>
+            <label for="f-phone"><span data-t="f_phone">เบอร์โทร</span><input id="f-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="08x-xxx-xxxx"></label>
+            <label for="f-addr" class="full"><span data-t="f_addr">ที่อยู่จัดส่ง</span><textarea id="f-addr" autocomplete="street-address"></textarea></label>
+            <label for="f-note" class="full"><span data-t="f_note">หมายเหตุ (ถ้ามี)</span><input id="f-note"></label>
+          </div>
+          <div class="msgwrap">
+            <h3 data-t="msg_label">ข้อความที่จะส่งทาง LINE</h3>
+            <div class="msg" id="msg" aria-live="polite"></div>
+          </div>
+          <div class="actions">
+            <a class="btn btn-line" id="send" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/></svg>
+              <span id="send-label"></span>
+            </a>
+            <button type="button" class="btn btn-outline" id="copy" data-t="copy">คัดลอกข้อความ</button>
+          </div>
+          <p class="status" id="status" role="status"></p>
+          <p class="hint" id="send-hint"></p>
+        </div>
+        <div class="steps">
+          <h3 data-t="steps_h">วิธีสั่ง</h3>
+          <ol id="steps"></ol>
+          <div class="alt-shop" id="alt-shop">
+            <h4 data-t="alt_h">ชอบสั่งผ่าน Shopee มากกว่า?</h4>
+            <p data-t="alt_p"></p>
+            <a class="btn btn-shopee sm js-shopee" href="https://s.shopee.co.th/3Vl2ejMdsw" target="_blank" rel="noopener" data-t="alt_btn">ไปที่ร้านบน Shopee</a>
+          </div>
+          <p class="fine" id="fine"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="soon">
+    <div class="wrap soon">
+      <header class="sec-head">
+        <p class="eyebrow">Next lots</p>
+        <h2 data-t="soon_h2">รสต่อไป</h2>
+        <p class="lede" data-t="soon_lede"></p>
+      </header>
+      <div class="soon-grid" id="soon-grid"></div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="about">
+    <div class="wrap about">
+      <div class="copy">
+        <p class="eyebrow" style="color:var(--muted)">Since 2026</p>
+        <h2 class="sec-title" style="font-weight:600;font-size:clamp(27px,3.6vw,38px);line-height:1.15" data-t="about_h2">เกี่ยวกับ MEEVEGGIES</h2>
+        <p data-t="about_p1"></p>
+        <p data-t="about_p2"></p>
+        <dl class="facts" id="facts"></dl>
+      </div>
+      <figure><img id="about-img" src="img/veg-original.jpg" alt="" width="720" height="900" loading="lazy" decoding="async"></figure>
+    </div>
+  </section>
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <p class="eyebrow">LINE Official Account</p>
+        <h2 data-t="contact_h2">คุยกับเราทาง LINE</h2>
+        <p class="lede" data-t="contact_lede"></p>
+        <div class="idrow">
+          <span class="idbox" id="line-id">@883uaaga</span>
+          <button type="button" class="btn btn-ghost sm" id="copy-id" data-t="copy_id">คัดลอก ID</button>
+        </div>
+        <div class="cta">
+          <a class="btn btn-line js-add" href="https://lin.ee/ZuS3iBGh" target="_blank" rel="noopener" data-t="btn_add">แอดเพื่อน</a>
+          <a class="btn btn-ghost" id="open-chat" target="_blank" rel="noopener" data-t="btn_chat">เปิดแชท</a>
+          <a class="btn btn-ghost" id="share" target="_blank" rel="noopener" data-t="btn_share" hidden>แชร์เว็บนี้ทาง LINE</a>
+        </div>
+        <div class="links">
+          <a id="fb" href="https://www.facebook.com/profile.php?id=61595408006598" target="_blank" rel="noopener">Facebook · MEEVEGGIES</a>
+          <a id="shopee" target="_blank" rel="noopener" hidden data-t="shopee">ร้านบน Shopee</a>
+        </div>
+      </div>
+      <div class="qr">
+        <svg viewBox="-1 -1 27 27" role="img" aria-labelledby="qr-t"><title id="qr-t">LINE QR · MEEVEGGIES @883uaaga</title><rect x="-1" y="-1" width="27" height="27" fill="var(--qr-bg)"/><path fill="var(--qr-fg)" d="M0 0h7v1h-7zM9 0h1v1h-1zM11 0h2v1h-2zM18 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM12 1h1v1h-1zM15 1h2v1h-2zM18 1h1v1h-1zM24 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM10 2h3v1h-3zM18 2h1v1h-1zM20 2h3v1h-3zM24 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM9 3h2v1h-2zM15 3h2v1h-2zM18 3h1v1h-1zM20 3h3v1h-3zM24 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM8 4h2v1h-2zM11 4h2v1h-2zM15 4h1v1h-1zM18 4h1v1h-1zM20 4h3v1h-3zM24 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM9 5h2v1h-2zM12 5h1v1h-1zM15 5h1v1h-1zM18 5h1v1h-1zM24 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h7v1h-7zM9 7h2v1h-2zM12 7h3v1h-3zM0 8h1v1h-1zM2 8h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM10 8h2v1h-2zM13 8h1v1h-1zM15 8h1v1h-1zM20 8h1v1h-1zM23 8h1v1h-1zM1 9h1v1h-1zM5 9h1v1h-1zM7 9h3v1h-3zM12 9h1v1h-1zM15 9h4v1h-4zM24 9h1v1h-1zM0 10h1v1h-1zM3 10h1v1h-1zM5 10h4v1h-4zM14 10h1v1h-1zM20 10h1v1h-1zM22 10h3v1h-3zM1 11h3v1h-3zM12 11h3v1h-3zM16 11h1v1h-1zM20 11h1v1h-1zM23 11h1v1h-1zM4 12h3v1h-3zM8 12h1v1h-1zM10 12h2v1h-2zM15 12h4v1h-4zM21 12h1v1h-1zM23 12h2v1h-2zM2 13h1v1h-1zM4 13h1v1h-1zM7 13h1v1h-1zM11 13h1v1h-1zM13 13h1v1h-1zM17 13h2v1h-2zM21 13h1v1h-1zM24 13h1v1h-1zM0 14h1v1h-1zM2 14h2v1h-2zM6 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM13 14h2v1h-2zM17 14h1v1h-1zM19 14h1v1h-1zM22 14h3v1h-3zM1 15h1v1h-1zM5 15h1v1h-1zM7 15h2v1h-2zM11 15h1v1h-1zM13 15h1v1h-1zM15 15h4v1h-4zM20 15h1v1h-1zM23 15h1v1h-1zM0 16h1v1h-1zM2 16h1v1h-1zM4 16h3v1h-3zM10 16h1v1h-1zM12 16h1v1h-1zM16 16h6v1h-6zM8 17h1v1h-1zM11 17h3v1h-3zM15 17h2v1h-2zM20 17h2v1h-2zM23 17h2v1h-2zM0 18h7v1h-7zM9 18h5v1h-5zM15 18h2v1h-2zM18 18h1v1h-1zM20 18h2v1h-2zM23 18h2v1h-2zM0 19h1v1h-1zM6 19h1v1h-1zM10 19h1v1h-1zM12 19h3v1h-3zM16 19h1v1h-1zM20 19h2v1h-2zM24 19h1v1h-1zM0 20h1v1h-1zM2 20h3v1h-3zM6 20h1v1h-1zM8 20h6v1h-6zM16 20h6v1h-6zM23 20h2v1h-2zM0 21h1v1h-1zM2 21h3v1h-3zM6 21h1v1h-1zM9 21h3v1h-3zM17 21h1v1h-1zM19 21h4v1h-4zM0 22h1v1h-1zM2 22h3v1h-3zM6 22h1v1h-1zM8 22h3v1h-3zM12 22h1v1h-1zM14 22h3v1h-3zM20 22h1v1h-1zM24 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM9 23h1v1h-1zM11 23h1v1h-1zM13 23h1v1h-1zM15 23h2v1h-2zM18 23h1v1h-1zM20 23h2v1h-2zM23 23h1v1h-1zM0 24h7v1h-7zM8 24h2v1h-2zM12 24h1v1h-1zM14 24h3v1h-3zM19 24h1v1h-1zM23 24h2v1h-2z"/></svg>
+        <p class="qid">@883uaaga</p>
+        <p data-t="qr_hint">บนคอมพิวเตอร์ สแกน QR นี้ด้วยกล้องมือถือหรือแอป LINE</p>
+      </div>
+    </div>
+    <div class="foot">
+      <img src="img/logo-wordmark.png" alt="MEEVEGGIES" width="419" height="84" loading="lazy">
+      <span class="fine2" id="foot-fine"></span>
+      <span>© 2026 MEEVEGGIES · มีเวจจี้ส์</span>
+    </div>
+  </div>
+</footer>
+
+<div class="bar" id="bar" hidden>
+  <div class="in">
+    <div><small id="bar-count"></small><span class="sum" id="bar-sum"></span></div>
+    <a class="btn btn-light sm" href="#order" data-t="bar_btn">สรุปออเดอร์</a>
+  </div>
+</div>
+
+<script>
+// ===== Settings Noah can change =====
+const LINE_ID = "@883uaaga";                       // LINE Official Account basic ID
+const LINE_ADD_URL = "https://lin.ee/ZuS3iBGh";    // add-friend link (same target as the QR)
+const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61595408006598";
+const SHOPEE_URL = "https://s.shopee.co.th/3Vl2ejMdsw";   // MEEVEGGIES shop on Shopee; empty hides every Shopee button
+const SITE_URL = location.origin + location.pathname;   // this page's own address, used by the "Share on LINE" button
+const SHIP_FEE = 50;     // baht per order, home delivery
+const SHIP_DAYS = 14;    // days to ship after payment
+const LIMIT = 50;        // packs per flavour in the first lot
+// ay: true once that product has its อย. (food registration) number. While any is false the site takes
+// free reservations; when all five are true it switches to paid Founders' Lot orders by itself.
+// shopee: true = listed in the Shopee shop (its button opens SHOPEE_URL), or paste that listing's own link; false = LINE only.
+const PRODUCTS = [
+  {id:"veg", sig:true, kind:"Crispy veg", size:"100 g", price:179, ay:true, shopee:true,
+   th:"ผักรวมอบกรอบ", en:"Crispy Mixed Veg", short:{th:"ผักรวม", en:"Mixed Veg"},
+   d:{th:"ผักหลากสีรวมในซองเดียว กรอบเบา เคี้ยวเพลิน เปิดซองแล้วกินได้ทันที",
+      en:"A colourful mix of crisp vegetables in one pouch. Light, crunchy and ready to eat."},
+   imgs:["showoff","closeup","inhand","original"]},
+  {id:"straw", kind:"Crispy fruit", size:"100 g", price:179, ay:true, shopee:true,
+   th:"สตรอว์เบอร์รี่อบกรอบ", en:"Crispy Strawberry", short:{th:"สตรอว์เบอร์รี่", en:"Strawberry"},
+   d:{th:"สตรอว์เบอร์รี่ฟรีซดราย กรอบแล้วละลายในปาก รสเปรี้ยวอมหวาน",
+      en:"Freeze-dried strawberries that crunch, then melt. Sweet with a little tang."},
+   imgs:["showoff","closeup","inhand"]},
+  {id:"okra", kind:"Crispy veg", size:"100 g", price:179, ay:false, shopee:false, pane:"real",
+   th:"กระเจี๊ยบอบกรอบ", en:"Crispy Okra", short:{th:"กระเจี๊ยบ", en:"Okra"},
+   d:{th:"กระเจี๊ยบเขียวทั้งฝัก กรอบเบา ขนมผักสีเขียวที่หยิบกินได้เรื่อยๆ",
+      en:"Whole green okra pods with a light crunch. An easy green snack to keep reaching for."},
+   imgs:["showoff","real","inhand"]},
+  {id:"mang", kind:"Crispy fruit", size:"100 g", price:399, ay:true, shopee:true,
+   th:"มังคุดอบกรอบ", en:"Crispy Mangosteen", short:{th:"มังคุด", en:"Mangosteen"},
+   d:{th:"เนื้อมังคุดสีขาว ราชินีผลไม้ไทยในแบบกรอบ หวานหอม อมเปรี้ยวนิดๆ",
+      en:"White mangosteen flesh, the queen of Thai fruit, made crisp. Sweet with a light tang."},
+   imgs:["showoff","closeup","inhand","original"]},
+  {id:"cashew", nuts:true, kind:"Roasted nuts", size:"300 g", price:259, ay:true, shopee:true,
+   th:"เม็ดมะม่วงหิมพานต์เผาโบราณ", en:"Roasted Cashew", short:{th:"มะม่วงหิมพานต์", en:"Cashew"},
+   d:{th:"เม็ดมะม่วงหิมพานต์สูตรดั้งเดิม คั่วแบบโบราณ หอมมัน เคี้ยวกรุบ ในซองใหญ่ 300 กรัม",
+      en:"Traditional-recipe cashews roasted the old way. Rich and crunchy, in a big 300 g pouch."},
+   imgs:["showoff","closeup","inhand","original"]},
+];
+const SOON = [
+  {id:"macadamia", th:"แมคคาเดเมีย", en:"Macadamia"},
+  {id:"trailmix", th:"ถั่วรวม 11 ชนิด", en:"Premium Trail Mix"},
+  {id:"pistachio", th:"พิสตาชิโอ", en:"Pistachio"},
+  {id:"lukyee", th:"ลูกหยีปัตตานี", en:"Luk Yee Pattani"},
+  {id:"driedstraw", th:"สตรอว์เบอร์รี่อบแห้ง", en:"Dried Strawberry"},
+  {id:"almond", th:"อัลมอนด์", en:"Almond"},
+  {id:"walnut", th:"วอลนัท", en:"Walnut"},
+  {id:"shiitake", th:"เห็ดหอมอบกรอบ", en:"Crispy Shiitake"},
+  {id:"kiwi", th:"กีวีอบกรอบ", en:"Crispy Kiwi"},
+];
+// ====================================
+
+const OPEN = PRODUCTS.every(p => p.ay);
+const MODE = OPEN ? "open" : "res";
+const MINP = Math.min(...PRODUCTS.map(p => p.price));
+const MINS = (PRODUCTS.find(p => p.price === MINP) || PRODUCTS[0]).size;
+
+const S = {
+  th:{
+    nav_products:"สินค้า", nav_order:"วิธีสั่ง", nav_soon:"รสต่อไป", nav_about:"เกี่ยวกับเรา", nav_contact:"ติดต่อ",
+    add_line:"แอด LINE", cta_shop:"เลือกรสที่ชอบ", cta_line:"แอด LINE " + LINE_ID, cta_shopee:"สั่งซื้อบน Shopee",
+    h1:["ผักผลไม้อบกรอบ","คัดเกรดพรีเมียม"],
+    ticket_from:"เริ่มต้น", ticket_sub:`ซอง ${MINS} · ${PRODUCTS.length} รส · รสละ ${LIMIT} ซอง`,
+    prod_h2:"MEEVEGGIES. Delights",
+    lot:`ล็อตแรก ${LIMIT} ซอง`, nuts:"มีถั่ว", signature:"Signature",
+    net:s=>`น้ำหนักสุทธิ ${s}`, pouch:s=>`ซองละ ${s}`, buy_shopee:"หรือซื้อบน Shopee",
+    add:"เพิ่มลงออเดอร์", inc:n=>`เพิ่ม ${n} 1 ซอง`, dec:n=>`ลด ${n} 1 ซอง`,
+    photo:(i,n)=>`รูปที่ ${i} จาก ${n}`, ay_title:"เลขสารบบอาหาร (อย.)", ay_pending:"แจ้งเมื่อเปิดขาย",
+    alt:{showoff:p=>`${p.th} ในซอง MEEVEGGIES วางคู่กับชาม`, closeup:p=>`${p.th} ในโหลแก้ว`,
+         inhand:p=>`มือถือซอง ${p.th}`, original:p=>`ซอง ${p.th} ภาพจริง`, real:p=>`${p.th} ในตะกร้า ภาพจริง`},
+    sheet_items:"รายการที่เลือก", empty:"ยังไม่ได้เลือกสินค้า เลือกรสจากด้านบนได้เลย",
+    ship:"ค่าส่ง (ส่งถึงบ้าน)",
+    f_name:"ชื่อผู้รับ", f_phone:"เบอร์โทร", f_addr:"ที่อยู่จัดส่ง", f_note:"หมายเหตุ (ถ้ามี)",
+    ph_name:"เช่น มายด์", ph_addr:"บ้านเลขที่ ถนน แขวง/ตำบล เขต/อำเภอ จังหวัด รหัสไปรษณีย์",
+    msg_label:"ข้อความที่จะส่งทาง LINE", msg_empty:"เลือกอย่างน้อย 1 ซอง แล้วข้อความจะขึ้นที่นี่",
+    copy:"คัดลอกข้อความ", copied:"คัดลอกข้อความแล้ว ถ้าแชทเปิดมาโดยไม่มีข้อความ ให้วางแล้วกดส่ง",
+    copied_only:"คัดลอกแล้ว วางในแชท LINE ของ MEEVEGGIES ได้เลย",
+    copy_fb:"เลือกข้อความให้แล้ว กดคัดลอกจากเมนูของเครื่อง",
+    send_hint:`บนมือถือ ปุ่มนี้จะเปิดแชท LINE ของ MEEVEGGIES พร้อมข้อความ กดส่งได้เลย บนคอมพิวเตอร์ ให้คัดลอกข้อความ แล้วแอด LINE ${LINE_ID} ด้วยมือถือ`,
+    steps_h:"วิธีสั่ง", alt_h:"ชอบสั่งผ่าน Shopee มากกว่า?", alt_btn:"ไปที่ร้านบน Shopee",
+    alt_p:"สั่งซื้อและจ่ายเงินผ่าน Shopee ได้ที่ร้าน MEEVEGGIES แล้วติดตามพัสดุได้ในแอป Shopee",
+    m_ship:"ค่าส่ง", m_name:"ชื่อ", m_phone:"โทร", m_addr:"ที่อยู่", m_note:"หมายเหตุ",
+    soon_h2:"รสต่อไป", soon_lede:"รสที่เรากำลังเตรียมสำหรับล็อตถัดไป แตะรสที่อยากได้ แล้วส่งข้อความหาเราทาง LINE เราจะแจ้งเมื่อเปิดขาย",
+    soon_go:"แจ้งเตือนทาง LINE", soon_msg:s=>`สนใจ ${s.th} (${s.en}) แจ้งเตือนเมื่อเปิดขายด้วย`,
+    about_h2:"เกี่ยวกับ MEEVEGGIES",
+    about_p1:"MEEVEGGIES (มีเวจจี้ส์) คือแบรนด์ขนมผัก ผลไม้ และถั่วอบกรอบ เริ่มต้นปี 2026 ล็อตแรกของเรามี 5 รส จำนวนจำกัด และจะเพิ่มรสใหม่ในล็อตถัดไป",
+    about_p2:"ทุกรสผลิตในโรงงานที่จดทะเบียนผลิตอาหารเพื่อจำหน่าย สั่งซื้อได้ทั้งทาง LINE และ Shopee และสอบถามเรื่องสินค้าได้ทาง LINE",
+    about_alt:"ตะกร้าผักผลไม้อบกรอบกับซอง MEEVEGGIES",
+    facts:[["Since","2026"],["First lot",`5 รส · รสละ ${LIMIT} ซอง`],["Order","LINE " + LINE_ID + " · Shopee"],["Delivery",`ส่งถึงบ้าน ค่าส่ง ${SHIP_FEE} บาท`]],
+    contact_h2:"คุยกับเราทาง LINE", contact_lede:"สั่งซื้อ จองคิว หรือถามเรื่องสินค้า ทักมาที่ LINE ของ MEEVEGGIES ได้เลย",
+    copy_id:"คัดลอก ID", copied_id:"คัดลอกแล้ว", btn_add:"แอดเพื่อน", btn_chat:"เปิดแชท", btn_share:"แชร์เว็บนี้ทาง LINE",
+    share_text:"MEEVEGGIES ผักผลไม้อบกรอบ ล็อตแรกเปิดแล้ว ", shopee:"ร้าน MEEVEGGIES บน Shopee",
+    qr_hint:"บนคอมพิวเตอร์ สแกน QR นี้ด้วยกล้องมือถือหรือแอป LINE",
+    bar_btn:"สรุปออเดอร์", bar_count:n=>`${n} ซอง · รวมค่าส่งแล้ว`,
+    res:{
+      lede:`ล็อตแรกของ MEEVEGGIES เปิดแล้ว ${PRODUCTS.length} รส รสละ ${LIMIT} ซอง จองผ่าน LINE ได้เลย ยังไม่ต้องโอนเงิน และได้ราคาล็อตแรกแน่นอน หรือจะสั่งซื้อผ่าน Shopee ก็ได้`,
+      terms:[`จำกัด ${LIMIT} ซองต่อรส`,"จองฟรี ยังไม่ต้องโอน","ราคาล็อตแรกล็อกไว้ให้"],
+      prod_lede:`ราคาล็อตแรก รสละ ${LIMIT} ซอง เพิ่มรสที่ชอบลงออเดอร์ แล้วส่งการจองทาง LINE ด้านล่าง (ค่าส่ง ${SHIP_FEE} บาทต่อออเดอร์) หรือจะสั่งซื้อผ่าน Shopee ก็ได้`,
+      order_h2:"ส่งการจองทาง LINE", send:"ส่งการจองทาง LINE", total:"ยอดโดยประมาณ",
+      head:"จองคิว MEEVEGGIES Founders' Lot (ยังไม่ต้องโอน)",
+      steps:["เลือกรสและจำนวนจากเว็บนี้ ใส่ชื่อและที่อยู่ แล้วกด “ส่งการจองทาง LINE”",
+             "LINE จะเปิดแชท MEEVEGGIES พร้อมข้อความจอง กดส่งได้เลย",
+             "เราล็อกราคาล็อตแรกไว้ให้ตามจำนวนที่จอง ยังไม่ต้องโอนเงิน",
+             `เมื่อเปิดขาย เราทักไปยืนยันและส่ง QR พร้อมเพย์ จัดส่งภายใน ${SHIP_DAYS} วันหลังโอน ถ้าไม่ทันกำหนด คืนเงินเต็มจำนวน`],
+      fine:"การจองยังไม่ใช่การซื้อ ยกเลิกได้ทุกเมื่อ · เม็ดมะม่วงหิมพานต์มีถั่ว ผู้แพ้ถั่วควรหลีกเลี่ยง · ราคานี้สำหรับล็อตแรกเท่านั้น"},
+    open:{
+      lede:`ล็อตแรกของ MEEVEGGIES เปิดขายแล้ว ${PRODUCTS.length} รส รสละ ${LIMIT} ซอง สั่งผ่าน LINE หรือ Shopee ก็ได้ ส่งไม่ทันกำหนดคืนเงินเต็มจำนวน`,
+      terms:[`จำกัด ${LIMIT} ซองต่อรส`,`จัดส่งภายใน ${SHIP_DAYS} วัน`,"ไม่ทันกำหนด คืนเงินเต็มจำนวน"],
+      prod_lede:`ราคาล็อตแรก รสละ ${LIMIT} ซอง เพิ่มรสที่ชอบลงออเดอร์ แล้วส่งออเดอร์ทาง LINE ด้านล่าง (ค่าส่ง ${SHIP_FEE} บาทต่อออเดอร์) หรือจะสั่งซื้อผ่าน Shopee ก็ได้`,
+      order_h2:"ส่งออเดอร์ทาง LINE", send:"ส่งออเดอร์ทาง LINE", total:"ยอดรวม",
+      head:"สั่งซื้อ MEEVEGGIES Founders' Lot",
+      steps:["เลือกรสและจำนวนจากเว็บนี้ ใส่ชื่อและที่อยู่ แล้วกด “ส่งออเดอร์ทาง LINE”",
+             "LINE จะเปิดแชท MEEVEGGIES พร้อมข้อความออเดอร์ กดส่งได้เลย",
+             "เรายืนยันออเดอร์และส่ง QR พร้อมเพย์ให้ โอนเต็มจำนวนแล้วส่งสลิปกลับมา",
+             `จัดส่งภายใน ${SHIP_DAYS} วันหลังโอน ถ้าส่งไม่ทัน หรือคุณยกเลิกก่อนของออก เราคืนเงินเต็มจำนวน`],
+      fine:"เม็ดมะม่วงหิมพานต์มีถั่ว ผู้แพ้ถั่วควรหลีกเลี่ยง · ราคานี้สำหรับล็อตแรกเท่านั้น · ออเดอร์ยืนยันเมื่อได้รับสลิปแล้ว"}
+  },
+  en:{
+    nav_products:"Products", nav_order:"How to order", nav_soon:"Coming next", nav_about:"About", nav_contact:"Contact",
+    add_line:"Add LINE", cta_shop:"Choose flavours", cta_line:"Add " + LINE_ID + " on LINE", cta_shopee:"Buy on Shopee",
+    h1:["Premium crispy","fruit & veg"],
+    ticket_from:"From", ticket_sub:`${MINS} pouch · ${PRODUCTS.length} flavours · ${LIMIT} packs each`,
+    prod_h2:"MEEVEGGIES. Delights",
+    lot:`First lot: ${LIMIT} packs`, nuts:"Contains nuts", signature:"Signature",
+    net:s=>`Net weight ${s}`, pouch:s=>`${s} pouch`, buy_shopee:"Or buy on Shopee",
+    add:"Add to order", inc:n=>`Add one ${n}`, dec:n=>`Remove one ${n}`,
+    photo:(i,n)=>`Photo ${i} of ${n}`, ay_title:"Thai FDA food registration number", ay_pending:"at launch",
+    alt:{showoff:p=>`${p.en} in a MEEVEGGIES pouch with a bowl`, closeup:p=>`${p.en} in a glass jar`,
+         inhand:p=>`Hand holding a ${p.en} pouch`, original:p=>`${p.en} pouch, original photo`, real:p=>`${p.en} in a market basket, real photo`},
+    sheet_items:"Your selection", empty:"Nothing selected yet. Pick flavours above.",
+    ship:"Shipping (home delivery)",
+    f_name:"Recipient name", f_phone:"Phone", f_addr:"Delivery address", f_note:"Note (optional)",
+    ph_name:"e.g. Mind", ph_addr:"House no., street, district, province, postcode",
+    msg_label:"Message we'll send on LINE", msg_empty:"Add at least one pack and your message appears here.",
+    copy:"Copy message", copied:"Message copied. If the chat opens empty, paste it and press send.",
+    copied_only:"Copied. Paste it into the MEEVEGGIES LINE chat.",
+    copy_fb:"Message selected. Use your device's Copy.",
+    send_hint:`On a phone, this button opens the MEEVEGGIES LINE chat with your message filled in. Just press send. On a computer, copy the message and add ${LINE_ID} on LINE from your phone.`,
+    steps_h:"How it works", alt_h:"Prefer Shopee?", alt_btn:"Go to our Shopee shop",
+    alt_p:"You can also order and pay through Shopee at the MEEVEGGIES shop, and track your parcel in the Shopee app.",
+    m_ship:"Shipping", m_name:"Name", m_phone:"Phone", m_addr:"Address", m_note:"Note",
+    soon_h2:"Coming next", soon_lede:"Flavours we're preparing for the next lots. Tap one to message us on LINE, and we'll tell you when it's on sale.",
+    soon_go:"Notify me on LINE", soon_msg:s=>`Hi MEEVEGGIES, please let me know when ${s.en} (${s.th}) is on sale.`,
+    about_h2:"About MEEVEGGIES",
+    about_p1:"MEEVEGGIES (มีเวจจี้ส์) is a brand of crispy vegetable, fruit and nut snacks, started in 2026. Our first lot has five flavours in limited numbers, with new flavours coming in the next lots.",
+    about_p2:"Every flavour is made in a factory registered to produce food for sale. Order on LINE or Shopee, and ask us anything on LINE.",
+    about_alt:"A basket of crispy fruit and vegetables with a MEEVEGGIES pouch",
+    facts:[["Since","2026"],["First lot",`5 flavours · ${LIMIT} packs each`],["Order","LINE " + LINE_ID + " · Shopee"],["Delivery",`Home delivery, ${SHIP_FEE} ฿ per order`]],
+    contact_h2:"Talk to us on LINE", contact_lede:"Order, reserve, or ask about a product. Message MEEVEGGIES on LINE.",
+    copy_id:"Copy ID", copied_id:"Copied", btn_add:"Add friend", btn_chat:"Open chat", btn_share:"Share this site on LINE",
+    share_text:"MEEVEGGIES crispy fruit & veg, first lot now open: ", shopee:"MEEVEGGIES on Shopee",
+    qr_hint:"On a computer? Scan this QR with your phone camera or the LINE app.",
+    bar_btn:"Review order", bar_count:n=>`${n} pack${n===1?"":"s"} · incl. shipping`,
+    res:{
+      lede:`The first MEEVEGGIES lot is open: ${PRODUCTS.length} flavours, ${LIMIT} packs each. Reserve on LINE with no payment now and keep the first-lot price, or order on Shopee.`,
+      terms:[`${LIMIT} packs per flavour`,"Free to reserve, pay later","First-lot price locked"],
+      prod_lede:`First-lot prices, ${LIMIT} packs per flavour. Add what you like and send your reservation on LINE below (${SHIP_FEE} ฿ shipping per order), or order on Shopee instead.`,
+      order_h2:"Send your reservation on LINE", send:"Send reservation on LINE", total:"Estimated total",
+      head:"MEEVEGGIES Founders' Lot reservation (no payment yet)",
+      steps:["Choose flavours and amounts here, add your name and address, then tap “Send reservation on LINE”.",
+             "LINE opens the MEEVEGGIES chat with your reservation filled in. Press send.",
+             "We hold the first-lot price for what you reserved. No payment yet.",
+             `When sales open, we message you to confirm and send a PromptPay QR. We ship within ${SHIP_DAYS} days of payment, or refund you in full.`],
+      fine:"A reservation is not a purchase and can be cancelled any time · Cashews are tree nuts; avoid them if you are allergic · These prices are for the first lot only"},
+    open:{
+      lede:`The first MEEVEGGIES lot is on sale: ${PRODUCTS.length} flavours, ${LIMIT} packs each. Order on LINE or Shopee. If we ship late, you get a full refund.`,
+      terms:[`${LIMIT} packs per flavour`,`Ships within ${SHIP_DAYS} days`,"Full refund if we're late"],
+      prod_lede:`First-lot prices, ${LIMIT} packs per flavour. Add what you like and send your order on LINE below (${SHIP_FEE} ฿ shipping per order), or order on Shopee instead.`,
+      order_h2:"Send your order on LINE", send:"Send order on LINE", total:"Total",
+      head:"MEEVEGGIES Founders' Lot order",
+      steps:["Choose flavours and amounts here, add your name and address, then tap “Send order on LINE”.",
+             "LINE opens the MEEVEGGIES chat with your order filled in. Press send.",
+             "We confirm your order and send a PromptPay QR. Pay in full and send us the slip.",
+             `We ship within ${SHIP_DAYS} days of payment. If we're late, or you cancel before it ships, we refund you in full.`],
+      fine:"Cashews are tree nuts; avoid them if you are allergic · These prices are for the first lot only · Orders are confirmed once we receive your slip"}
+  }
+};
+
+const $ = id => document.getElementById(id);
+const enc = encodeURIComponent;
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const chatURL = text => "https://line.me/R/oaMessage/" + enc(LINE_ID) + "/" + (text ? "?" + enc(text) : "");
+const shareURL = text => "https://line.me/R/share?text=" + enc(text);
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+let lang = "th";
+const qty = Object.fromEntries(PRODUCTS.map(p => [p.id, 0]));
+const FIELDS = ["f-name","f-phone","f-addr","f-note"];
+
+const L = () => S[lang];
+const M = () => S[lang][MODE];
+const pname = p => lang === "th" ? p.th : p.en;
+const baht = n => n.toLocaleString(lang === "th" ? "th-TH" : "en-US") + " ฿";
+const count = () => PRODUCTS.reduce((s,p) => s + qty[p.id], 0);
+const subtotal = () => PRODUCTS.reduce((s,p) => s + p.price * qty[p.id], 0);
+
+const STORE = "meeveggies-site-v1";
+function save(){
+  try{ localStorage.setItem(STORE, JSON.stringify({lang, qty, f:Object.fromEntries(FIELDS.map(id => [id, $(id).value]))})); }catch(e){}
+}
+function load(){
+  try{ return JSON.parse(localStorage.getItem(STORE) || "{}") || {}; }catch(e){ return {}; }
+}
+
+/* ---------- static text ---------- */
+function applyText(){
+  const t = L(), m = M();
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(el => { const v = t[el.dataset.t]; if(typeof v === "string") el.textContent = v; });
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  $("h1").replaceChildren(...t.h1.map(s => Object.assign(document.createElement("span"), {textContent:s})));
+  $("hero-lede").textContent = m.lede;
+  $("ticket-min").textContent = MINP;
+  $("ticket-sub").textContent = t.ticket_sub;
+  $("prod-lede").textContent = m.prod_lede;
+  $("order-h2").textContent = m.order_h2;
+  $("send-label").textContent = m.send;
+  $("send-hint").textContent = t.send_hint;
+  $("steps").replaceChildren(...m.steps.map(s => { const li = document.createElement("li"); li.append(Object.assign(document.createElement("p"), {textContent:s})); return li; }));
+  $("fine").textContent = m.fine;
+  $("foot-fine").textContent = m.fine;
+  $("f-name").placeholder = t.ph_name;
+  $("f-addr").placeholder = t.ph_addr;
+  $("about-img").alt = t.about_alt;
+  $("facts").replaceChildren(...t.facts.map(([k,v]) => { const d = document.createElement("div");
+    d.append(Object.assign(document.createElement("dt"), {textContent:k}), Object.assign(document.createElement("dd"), {textContent:v})); return d; }));
+  $("open-chat").href = chatURL("");
+  $("fb").href = FACEBOOK_URL;
+  const sh = $("shopee"); sh.hidden = !SHOPEE_URL; if(SHOPEE_URL) sh.href = SHOPEE_URL;
+  document.querySelectorAll(".js-shopee").forEach(a => { a.hidden = !SHOPEE_URL; if(SHOPEE_URL) a.href = SHOPEE_URL; });
+  $("alt-shop").hidden = !SHOPEE_URL;
+  const share = $("share"); share.hidden = !SITE_URL; if(SITE_URL) share.href = shareURL(t.share_text + SITE_URL);
+  document.querySelectorAll(".js-add").forEach(a => a.href = LINE_ADD_URL);
+  $("line-id").textContent = LINE_ID;
+}
+
+/* ---------- hero window ---------- */
+function renderPanes(){
+  $("panes").innerHTML = PRODUCTS.map(p => { const k = p.pane || "closeup"; return `<a class="pane" href="#p-${p.id}">
+      <img src="img/${p.id}-${k}.jpg" alt="${esc(L().alt[k](p))}" width="720" height="900" decoding="async">
+      <span class="cap"><b>${esc(p.short[lang])}</b><span>${p.price} ฿</span><i>${esc(L().pouch(p.size))}</i></span></a>`; }).join("");
+}
+
+/* ---------- products ---------- */
+function buyHTML(p){
+  const t = L(), q = qty[p.id], n = esc(pname(p));
+  const price = `<span class="price">${p.price}<small>฿</small><span class="per">/ ${esc(p.size)}</span></span>`;
+  const ctl = q
+    ? `<div class="qty"><button type="button" data-d="-1" aria-label="${esc(t.dec(pname(p)))}">−</button><output aria-live="polite">${q}</output><button type="button" data-d="1" aria-label="${esc(t.inc(pname(p)))}"${q >= LIMIT ? " disabled" : ""}>+</button></div>`
+    : `<button type="button" class="btn btn-ink sm add" data-d="1" aria-label="${esc(t.add)}: ${n}">${esc(t.add)}</button>`;
+  return price + ctl;
+}
+function shopeeHTML(p){
+  const url = typeof p.shopee === "string" ? p.shopee : (p.shopee ? SHOPEE_URL : "");
+  return url ? `<a class="shp" href="${esc(url)}" target="_blank" rel="noopener">${esc(L().buy_shopee)}</a>` : "";
+}
+function cardHTML(p){
+  const t = L();
+  const other = lang === "th" ? p.en : p.th;
+  const imgs = p.imgs.map((k,i) => `<img src="img/${p.id}-${k}.jpg" alt="${esc(t.alt[k](p))}" width="720" height="900"${i ? ' loading="lazy"' : ""} decoding="async">`).join("");
+  const dots = p.imgs.map((k,i) => `<button type="button" data-dot="${i}" aria-label="${esc(t.photo(i+1, p.imgs.length))}"${i ? "" : ' aria-current="true"'}></button>`).join("");
+  const meta = [t.net(p.size), t.lot, p.nuts ? t.nuts : ""].filter(Boolean).join(" · ");
+  return `<article class="card${p.sig ? " sig" : ""}${qty[p.id] ? " on" : ""}" id="p-${p.id}" data-id="${p.id}">
+    <div class="card-in">
+      <div class="media">
+        <div class="track">${imgs}</div>
+        ${p.sig ? `<span class="stamp">${esc(t.signature)}</span>` : ""}
+        <div class="dots" role="group" aria-label="${esc(pname(p))}">${dots}</div>
+      </div>
+      <div class="info">
+        <p class="kind">${esc(p.kind)}</p>
+        <h3>${esc(pname(p))}</h3>
+        <p class="alt">${esc(other)}</p>
+        <p class="meta">${esc(meta)}</p>
+        <p class="desc">${esc(p.d[lang])}</p>
+        <div class="buy">${buyHTML(p)}</div>
+        ${shopeeHTML(p)}
+      </div>
+    </div>
+  </article>`;
+}
+function renderProducts(){
+  $("grid").innerHTML = PRODUCTS.map(cardHTML).join("");
+  document.querySelectorAll("#grid .track").forEach(tr => {
+    let raf = 0;
+    tr.addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => {
+      const i = Math.round(tr.scrollLeft / Math.max(1, tr.clientWidth));
+      tr.parentElement.querySelectorAll(".dots button").forEach((b,j) => b.setAttribute("aria-current", String(i === j)));
+    }); }, {passive:true});
+  });
+}
+function updateCard(id, focusSel){
+  const p = PRODUCTS.find(x => x.id === id), card = $("p-" + id);
+  card.classList.toggle("on", qty[id] > 0);
+  const buy = card.querySelector(".buy");
+  buy.innerHTML = buyHTML(p);
+  if(focusSel){ const f = buy.querySelector(focusSel) || buy.querySelector("button"); if(f) f.focus(); }
+}
+$("grid").addEventListener("click", e => {
+  const dot = e.target.closest("[data-dot]");
+  if(dot){
+    const tr = dot.closest(".media").querySelector(".track");
+    tr.scrollTo({left: Number(dot.dataset.dot) * tr.clientWidth, behavior: reduceMotion ? "auto" : "smooth"});
+    return;
+  }
+  const b = e.target.closest("[data-d]");
+  if(!b) return;
+  const id = b.closest(".card").dataset.id, d = Number(b.dataset.d);
+  qty[id] = Math.max(0, Math.min(LIMIT, qty[id] + d));
+  updateCard(id, qty[id] === 0 ? ".add" : (d > 0 ? '[data-d="1"]' : '[data-d="-1"]'));
+  renderOrder(); save();
+});
+
+/* ---------- order ---------- */
+function fields(){ return {name:$("f-name").value.trim(), phone:$("f-phone").value.trim(), addr:$("f-addr").value.trim(), note:$("f-note").value.trim()}; }
+function buildMessage(){
+  const t = L(), m = M();
+  const items = PRODUCTS.filter(p => qty[p.id] > 0);
+  if(!items.length) return "";
+  const f = fields();
+  const nm = p => lang === "th" ? `${p.th} ${p.size}` : `${p.en} ${p.size} (${p.th})`;
+  return [m.head,
+    ...items.map(p => `- ${nm(p)} x${qty[p.id]} = ${baht(p.price * qty[p.id])}`),
+    `${t.m_ship}: ${baht(SHIP_FEE)}`,
+    `${m.total}: ${baht(subtotal() + SHIP_FEE)}`,
+    `${t.m_name}: ${f.name || "-"}`,
+    `${t.m_phone}: ${f.phone || "-"}`,
+    `${t.m_addr}: ${f.addr || "-"}`,
+    ...(f.note ? [`${t.m_note}: ${f.note}`] : [])
+  ].join("\n");
+}
+function renderOrder(){
+  const t = L(), m = M(), n = count();
+  const items = PRODUCTS.filter(p => qty[p.id] > 0);
+  $("lines").innerHTML = items.length
+    ? items.map(p => `<li><span class="nm">${esc(pname(p))} <span class="x">${esc(p.size)} × ${qty[p.id]}</span></span><span class="amt">${baht(p.price * qty[p.id])}</span></li>`).join("")
+    : `<li><span class="empty">${esc(t.empty)}</span></li>`;
+  $("sums").innerHTML = items.length
+    ? `<div class="sumrow"><span>${esc(t.ship)}</span><span class="amt">${baht(SHIP_FEE)}</span></div>
+       <div class="sumrow total"><span>${esc(m.total)}</span><span class="amt">${baht(subtotal() + SHIP_FEE)}</span></div>` : "";
+  const msg = buildMessage();
+  const box = $("msg");
+  box.textContent = msg || t.msg_empty;
+  box.classList.toggle("is-empty", !msg);
+  const send = $("send");
+  if(msg){ send.href = chatURL(msg); send.removeAttribute("aria-disabled"); send.removeAttribute("tabindex"); }
+  else { send.removeAttribute("href"); send.setAttribute("aria-disabled","true"); send.setAttribute("tabindex","-1"); }
+  $("copy").disabled = !msg;
+  $("bar-count").textContent = t.bar_count(n);
+  $("bar-sum").textContent = n ? baht(subtotal() + SHIP_FEE) : "";
+  updateBar();
+}
+let orderVisible = false;
+function updateBar(){
+  const show = count() > 0 && !orderVisible;
+  $("bar").hidden = !show;
+  document.body.classList.toggle("has-bar", show);
+}
+if("IntersectionObserver" in window){
+  new IntersectionObserver(es => { orderVisible = es[0].isIntersecting; updateBar(); }, {rootMargin:"0px 0px -35% 0px"}).observe($("order"));
+}
+FIELDS.forEach(id => $(id).addEventListener("input", () => { renderOrder(); save(); }));
+
+function copyText(text, onDone, onFail){
+  try{ navigator.clipboard.writeText(text).then(onDone, onFail); }catch(e){ onFail(); }
+}
+function selectMsg(){
+  const r = document.createRange(); r.selectNodeContents($("msg"));
+  const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+}
+$("send").addEventListener("click", () => {
+  const msg = buildMessage(); if(!msg) return;
+  copyText(msg, () => { $("status").textContent = L().copied; }, () => {});
+});
+$("copy").addEventListener("click", () => {
+  const msg = buildMessage(); if(!msg) return;
+  copyText(msg, () => { $("status").textContent = L().copied_only; }, () => { selectMsg(); $("status").textContent = L().copy_fb; });
+});
+$("copy-id").addEventListener("click", e => {
+  const b = e.currentTarget;
+  copyText(LINE_ID, () => { b.textContent = L().copied_id; setTimeout(() => { b.textContent = L().copy_id; }, 1800); },
+    () => { const r = document.createRange(); r.selectNodeContents($("line-id")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); });
+});
+
+/* ---------- coming next ---------- */
+function renderSoon(){
+  const t = L();
+  $("soon-grid").innerHTML = SOON.map(s => `<a class="soon-tile" href="${esc(chatURL(t.soon_msg(s)))}" target="_blank" rel="noopener">
+      <img src="img/soon/${s.id}.jpg" alt="${esc(lang === "th" ? s.th : s.en)}" width="400" height="500" loading="lazy" decoding="async">
+      <span class="e">${esc(lang === "th" ? s.en : s.th)}</span>
+      <span class="n">${esc(lang === "th" ? s.th : s.en)}</span>
+      <span class="go">${esc(t.soon_go)}</span></a>`).join("");
+}
+
+/* ---------- language ---------- */
+function renderAll(){ applyText(); renderPanes(); renderProducts(); renderOrder(); renderSoon(); }
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => {
+  if(b.dataset.lang === lang) return;
+  lang = b.dataset.lang; $("status").textContent = ""; renderAll(); save();
+}));
+
+/* ---------- boot ---------- */
+function start(data){
+  const st = Object.assign({}, load(), data || {});
+  if(st.lang === "en" || st.lang === "th") lang = st.lang;
+  if(st.qty) PRODUCTS.forEach(p => { const v = Number(st.qty[p.id]); if(v > 0) qty[p.id] = Math.min(LIMIT, Math.floor(v)); });
+  if(st.f) FIELDS.forEach(id => { if(typeof st.f[id] === "string") $(id).value = st.f[id]; });
+  renderAll();
+}
+start({});
+</script>
+</body>
+</html>
