@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>MEEVEGGIES มีเวจจี้ส์</title>
-<meta name="description" content="MEEVEGGIES (มีเวจจี้ส์) ผัก ผลไม้ และถั่วอบกรอบ ล็อตแรก 5 รส สั่งผ่าน LINE @883uaaga หรือ Shopee">
+<meta name="description" content="MEEVEGGIES (มีเวจจี้ส์) ผัก ผลไม้ และถั่วอบกรอบ ล็อตแรก 5 รส เลือกซอง 100 หรือ 300 กรัม สั่งผ่าน LINE @883uaaga หรือ Shopee">
 <meta name="theme-color" content="#151615">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MEEVEGGIES">
 <meta property="og:title" content="MEEVEGGIES มีเวจจี้ส์">
-<meta property="og:description" content="ผักผลไม้อบกรอบ ล็อตแรก 5 รส เริ่มต้น 179 บาท สั่งผ่าน LINE @883uaaga หรือ Shopee">
+<meta property="og:description" content="ผัก ผลไม้ และถั่วอบกรอบ ล็อตแรก 5 รส ซอง 100 หรือ 300 กรัม เริ่มต้น 99 บาท สั่งผ่าน LINE @883uaaga หรือ Shopee">
 <meta property="og:url" content="https://huachxng.github.io/meeveggies/">
 <meta property="og:image" content="https://huachxng.github.io/meeveggies/img/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -187,6 +187,14 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
 .qty button:hover{border-color:var(--ink)}
 .qty button[disabled]{opacity:.35;cursor:not-allowed}
 .qty output{min-width:28px;text-align:center;font:600 16px var(--mono);font-variant-numeric:tabular-nums}
+.sizes{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:10px}
+.sizes + .buy{margin-top:0;padding-top:10px}
+.sizes button{font:500 13.5px/1.2 var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:8px 12px;min-height:36px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.sizes button:hover{border-color:var(--ink)}
+.sizes button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:600}
+.sizes .sq{font:600 12.5px/1 var(--mono);color:var(--muted)}
+.pwrap{display:grid;gap:5px;min-width:0}
+.save{font:600 12.5px/1.2 var(--body);color:var(--line-text)}
 @container (max-width:299px){
   .info{padding:12px 12px 14px}
   .info .desc{display:none}
@@ -213,6 +221,7 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
   .info .alt{font-size:15px}
   .info .desc{font-size:17px;max-width:42ch}
   .buy{margin-top:18px;justify-content:flex-start;gap:24px}
+  .sizes{margin-top:14px}
   .price{font-size:30px}
 }
 
@@ -349,7 +358,7 @@ textarea{min-height:84px;resize:vertical}
     <div class="ticket" aria-labelledby="ticket-from">
       <p class="eyebrow">Founders' Lot</p>
       <span class="from" id="ticket-from" data-t="ticket_from">เริ่มต้น</span>
-      <span class="big"><span id="ticket-min">179</span><small>฿</small></span>
+      <span class="big"><span id="ticket-min">99</span><small>฿</small></span>
       <span class="sub" id="ticket-sub"></span>
     </div>
   </div>
@@ -495,31 +504,33 @@ const LIMIT = 50;        // packs per flavour in the first lot
 // ay: true once that product has its อย. (food registration) number. While any is false the site takes
 // free reservations; when all five are true it switches to paid Founders' Lot orders by itself.
 // shopee: true = listed in the Shopee shop (its button opens SHOPEE_URL), or paste that listing's own link; false = LINE only.
+// sizes: what customers can choose; the first one is shown first. k = id, g = grams, price in baht,
+// packs = how many sealed pouches it ships as (300 g of crisps = 3 × 100 g pouches).
 const PRODUCTS = [
-  {id:"veg", sig:true, kind:"Crispy veg", size:"100 g", price:179, ay:true, shopee:true,
+  {id:"veg", sig:true, kind:"Crispy veg", sizes:[{k:"100", g:100, price:179, packs:1}, {k:"300", g:300, price:479, packs:3}], ay:true, shopee:true,
    th:"ผักรวมอบกรอบ", en:"Crispy Mixed Veg", short:{th:"ผักรวม", en:"Mixed Veg"},
    d:{th:"ผักหลากสีรวมในซองเดียว กรอบเบา เคี้ยวเพลิน เปิดซองแล้วกินได้ทันที",
       en:"A colourful mix of crisp vegetables in one pouch. Light, crunchy and ready to eat."},
    imgs:["showoff","closeup","inhand","original"]},
-  {id:"straw", kind:"Crispy fruit", size:"100 g", price:179, ay:true, shopee:true,
+  {id:"straw", kind:"Crispy fruit", sizes:[{k:"100", g:100, price:179, packs:1}, {k:"300", g:300, price:479, packs:3}], ay:true, shopee:true,
    th:"สตรอว์เบอร์รี่อบกรอบ", en:"Crispy Strawberry", short:{th:"สตรอว์เบอร์รี่", en:"Strawberry"},
    d:{th:"สตรอว์เบอร์รี่ฟรีซดราย กรอบแล้วละลายในปาก รสเปรี้ยวอมหวาน",
       en:"Freeze-dried strawberries that crunch, then melt. Sweet with a little tang."},
    imgs:["showoff","closeup","inhand"]},
-  {id:"okra", kind:"Crispy veg", size:"100 g", price:179, ay:false, shopee:false, pane:"real",
+  {id:"okra", kind:"Crispy veg", sizes:[{k:"100", g:100, price:179, packs:1}, {k:"300", g:300, price:479, packs:3}], ay:false, shopee:false, pane:"real",
    th:"กระเจี๊ยบอบกรอบ", en:"Crispy Okra", short:{th:"กระเจี๊ยบ", en:"Okra"},
    d:{th:"กระเจี๊ยบเขียวทั้งฝัก กรอบเบา ขนมผักสีเขียวที่หยิบกินได้เรื่อยๆ",
       en:"Whole green okra pods with a light crunch. An easy green snack to keep reaching for."},
    imgs:["showoff","real","inhand"]},
-  {id:"mang", kind:"Crispy fruit", size:"100 g", price:399, ay:true, shopee:true,
+  {id:"mang", kind:"Crispy fruit", sizes:[{k:"100", g:100, price:399, packs:1}], ay:true, shopee:true,
    th:"มังคุดอบกรอบ", en:"Crispy Mangosteen", short:{th:"มังคุด", en:"Mangosteen"},
    d:{th:"เนื้อมังคุดสีขาว ราชินีผลไม้ไทยในแบบกรอบ หวานหอม อมเปรี้ยวนิดๆ",
       en:"White mangosteen flesh, the queen of Thai fruit, made crisp. Sweet with a light tang."},
    imgs:["showoff","closeup","inhand","original"]},
-  {id:"cashew", nuts:true, kind:"Roasted nuts", size:"300 g", price:259, ay:true, shopee:true,
+  {id:"cashew", nuts:true, kind:"Roasted nuts", sizes:[{k:"300", g:300, price:259, packs:1}, {k:"100", g:100, price:99, packs:1}], ay:true, shopee:true,
    th:"เม็ดมะม่วงหิมพานต์เผาโบราณ", en:"Roasted Cashew", short:{th:"มะม่วงหิมพานต์", en:"Cashew"},
-   d:{th:"เม็ดมะม่วงหิมพานต์สูตรดั้งเดิม คั่วแบบโบราณ หอมมัน เคี้ยวกรุบ ในซองใหญ่ 300 กรัม",
-      en:"Traditional-recipe cashews roasted the old way. Rich and crunchy, in a big 300 g pouch."},
+   d:{th:"เม็ดมะม่วงหิมพานต์สูตรดั้งเดิม คั่วแบบโบราณ หอมมัน เคี้ยวกรุบ เลือกได้ทั้งซอง 100 กรัม และซองใหญ่ 300 กรัม",
+      en:"Traditional-recipe cashews roasted the old way. Rich and crunchy, in a 100 g or a big 300 g pouch."},
    imgs:["showoff","closeup","inhand","original"]},
 ];
 const SOON = [
@@ -537,8 +548,9 @@ const SOON = [
 
 const OPEN = PRODUCTS.every(p => p.ay);
 const MODE = OPEN ? "open" : "res";
-const MINP = Math.min(...PRODUCTS.map(p => p.price));
-const MINS = (PRODUCTS.find(p => p.price === MINP) || PRODUCTS[0]).size;
+const ALLSIZES = PRODUCTS.flatMap(p => p.sizes);
+const MINP = Math.min(...ALLSIZES.map(s => s.price));
+const MINS = (ALLSIZES.find(s => s.price === MINP) || ALLSIZES[0]).g + " g";
 
 const S = {
   th:{
@@ -549,6 +561,7 @@ const S = {
     prod_h2:"MEEVEGGIES. Delights",
     lot:`ล็อตแรก ${LIMIT} ซอง`, nuts:"มีถั่ว", signature:"Signature",
     net:s=>`น้ำหนักสุทธิ ${s}`, pouch:s=>`ซองละ ${s}`, buy_shopee:"หรือซื้อบน Shopee",
+    size_label:"เลือกขนาด", sz:s=>s.packs > 1 ? `${s.g} g (${s.packs} ซอง)` : `${s.g} g`, save:n=>`ประหยัด ${n} ฿`,
     add:"เพิ่มลงออเดอร์", inc:n=>`เพิ่ม ${n} 1 ซอง`, dec:n=>`ลด ${n} 1 ซอง`,
     photo:(i,n)=>`รูปที่ ${i} จาก ${n}`, ay_title:"เลขสารบบอาหาร (อย.)", ay_pending:"แจ้งเมื่อเปิดขาย",
     alt:{showoff:p=>`${p.th} ในซอง MEEVEGGIES วางคู่กับชาม`, closeup:p=>`${p.th} ในโหลแก้ว`,
@@ -604,10 +617,11 @@ const S = {
     nav_products:"Products", nav_order:"How to order", nav_soon:"Coming next", nav_about:"About", nav_contact:"Contact",
     add_line:"Add LINE", cta_shop:"Choose flavours", cta_line:"Add " + LINE_ID + " on LINE", cta_shopee:"Buy on Shopee",
     h1:["Premium crispy","fruit & veg"],
-    ticket_from:"From", ticket_sub:`${MINS} pouch · ${PRODUCTS.length} flavours · ${LIMIT} packs each`,
+    ticket_from:"From", ticket_sub:`${MINS} pouch · ${PRODUCTS.length} flavours · ${LIMIT} pouches each`,
     prod_h2:"MEEVEGGIES. Delights",
     lot:`First lot: ${LIMIT} packs`, nuts:"Contains nuts", signature:"Signature",
     net:s=>`Net weight ${s}`, pouch:s=>`${s} pouch`, buy_shopee:"Or buy on Shopee",
+    size_label:"Choose a size", sz:s=>s.packs > 1 ? `${s.g} g (${s.packs} × ${s.g / s.packs} g)` : `${s.g} g`, save:n=>`Save ${n} ฿`,
     add:"Add to order", inc:n=>`Add one ${n}`, dec:n=>`Remove one ${n}`,
     photo:(i,n)=>`Photo ${i} of ${n}`, ay_title:"Thai FDA food registration number", ay_pending:"at launch",
     alt:{showoff:p=>`${p.en} in a MEEVEGGIES pouch with a bowl`, closeup:p=>`${p.en} in a glass jar`,
@@ -635,7 +649,7 @@ const S = {
     copy_id:"Copy ID", copied_id:"Copied", btn_add:"Add friend", btn_chat:"Open chat", btn_share:"Share this site on LINE",
     share_text:"MEEVEGGIES crispy fruit & veg, first lot now open: ", shopee:"MEEVEGGIES on Shopee",
     qr_hint:"On a computer? Scan this QR with your phone camera or the LINE app.",
-    bar_btn:"Review order", bar_count:n=>`${n} pack${n===1?"":"s"} · incl. shipping`,
+    bar_btn:"Review order", bar_count:n=>`${n} pouch${n===1?"":"es"} · incl. shipping`,
     res:{
       lede:`The first MEEVEGGIES lot is open: ${PRODUCTS.length} flavours, ${LIMIT} packs each. Reserve on LINE with no payment now and keep the first-lot price, or order on Shopee.`,
       terms:[`${LIMIT} packs per flavour`,"Free to reserve, pay later","First-lot price locked"],
@@ -669,23 +683,32 @@ const shareURL = text => "https://line.me/R/share?text=" + enc(text);
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 let lang = "th";
-const qty = Object.fromEntries(PRODUCTS.map(p => [p.id, 0]));
+const lk = (p,s) => p.id + ":" + s.k;   // one order line per flavour + size
+const qty = Object.fromEntries(PRODUCTS.flatMap(p => p.sizes.map(s => [lk(p,s), 0])));
+const sel = Object.fromEntries(PRODUCTS.map(p => [p.id, p.sizes[0].k]));   // size picked on each card
 const FIELDS = ["f-name","f-phone","f-addr","f-note"];
 
 const L = () => S[lang];
 const M = () => S[lang][MODE];
 const pname = p => lang === "th" ? p.th : p.en;
 const baht = n => n.toLocaleString(lang === "th" ? "th-TH" : "en-US") + " ฿";
-const count = () => PRODUCTS.reduce((s,p) => s + qty[p.id], 0);
-const subtotal = () => PRODUCTS.reduce((s,p) => s + p.price * qty[p.id], 0);
+const sizeOf = (p,k) => p.sizes.find(s => s.k === k) || p.sizes[0];
+const packsOf = p => p.sizes.reduce((n,s) => n + qty[lk(p,s)] * s.packs, 0);
+const picked = () => PRODUCTS.flatMap(p => p.sizes.filter(s => qty[lk(p,s)] > 0).map(s => ({p, s, q:qty[lk(p,s)]})));
+const count = () => PRODUCTS.reduce((n,p) => n + packsOf(p), 0);
+const subtotal = () => picked().reduce((t,x) => t + x.s.price * x.q, 0);
+// saving on a bigger size versus buying the smallest size by weight
+const saveOf = (p,s) => { const m = p.sizes.reduce((a,b) => a.g <= b.g ? a : b); return s === m ? 0 : Math.round(m.price / m.g * s.g - s.price); };
 
-const STORE = "meeveggies-site-v1";
+const STORE = "meeveggies-site-v2";
 function save(){
-  try{ localStorage.setItem(STORE, JSON.stringify({lang, qty, f:Object.fromEntries(FIELDS.map(id => [id, $(id).value]))})); }catch(e){}
+  try{ localStorage.setItem(STORE, JSON.stringify({lang, qty, sel, f:Object.fromEntries(FIELDS.map(id => [id, $(id).value]))})); }catch(e){}
 }
 function load(){
-  try{ return JSON.parse(localStorage.getItem(STORE) || "{}") || {}; }catch(e){ return {}; }
+  try{ return JSON.parse(localStorage.getItem(STORE) || localStorage.getItem("meeveggies-site-v1") || "{}") || {}; }catch(e){ return {}; }
 }
+// carts saved before sizes existed are keyed by the bare product id, which was always its first size
+const upgradeQty = q => { const o = Object.assign({}, q); PRODUCTS.forEach(p => { if(p.id in o){ const k = lk(p, p.sizes[0]); o[k] = (Number(o[k]) || 0) + (Number(o[p.id]) || 0); delete o[p.id]; } }); return o; };
 
 /* ---------- static text ---------- */
 function applyText(){
@@ -723,16 +746,23 @@ function applyText(){
 function renderPanes(){
   $("panes").innerHTML = PRODUCTS.map(p => { const k = p.pane || "closeup"; return `<a class="pane" href="#p-${p.id}">
       <img src="img/${p.id}-${k}.jpg" alt="${esc(L().alt[k](p))}" width="720" height="900" decoding="async">
-      <span class="cap"><b>${esc(p.short[lang])}</b><span>${p.price} ฿</span><i>${esc(L().pouch(p.size))}</i></span></a>`; }).join("");
+      <span class="cap"><b>${esc(p.short[lang])}</b><span>${p.sizes[0].price} ฿</span><i>${esc(L().pouch(p.sizes[0].g + " g"))}</i></span></a>`; }).join("");
 }
 
 /* ---------- products ---------- */
+function sizesHTML(p){
+  if(p.sizes.length < 2) return "";
+  const t = L();
+  return `<div class="sizes" role="group" aria-label="${esc(t.size_label)}">${p.sizes.map(s => { const q = qty[lk(p,s)];
+    return `<button type="button" data-size="${s.k}" aria-pressed="${sel[p.id] === s.k}">${esc(t.sz(s))}${q ? `<span class="sq">×${q}</span>` : ""}</button>`; }).join("")}</div>`;
+}
 function buyHTML(p){
-  const t = L(), q = qty[p.id], n = esc(pname(p));
-  const price = `<span class="price">${p.price}<small>฿</small><span class="per">/ ${esc(p.size)}</span></span>`;
+  const t = L(), s = sizeOf(p, sel[p.id]), q = qty[lk(p,s)], nm = pname(p) + " " + t.sz(s), n = esc(nm);
+  const sv = saveOf(p, s), full = packsOf(p) + s.packs > LIMIT;
+  const price = `<span class="pwrap"><span class="price">${s.price}<small>฿</small><span class="per">/ ${s.g} g</span></span>${sv > 0 ? `<span class="save">${esc(t.save(sv))}</span>` : ""}</span>`;
   const ctl = q
-    ? `<div class="qty"><button type="button" data-d="-1" aria-label="${esc(t.dec(pname(p)))}">−</button><output aria-live="polite">${q}</output><button type="button" data-d="1" aria-label="${esc(t.inc(pname(p)))}"${q >= LIMIT ? " disabled" : ""}>+</button></div>`
-    : `<button type="button" class="btn btn-ink sm add" data-d="1" aria-label="${esc(t.add)}: ${n}">${esc(t.add)}</button>`;
+    ? `<div class="qty"><button type="button" data-d="-1" aria-label="${esc(t.dec(nm))}">−</button><output aria-live="polite">${q}</output><button type="button" data-d="1" aria-label="${esc(t.inc(nm))}"${full ? " disabled" : ""}>+</button></div>`
+    : `<button type="button" class="btn btn-ink sm add" data-d="1" aria-label="${esc(t.add)}: ${n}"${full ? " disabled" : ""}>${esc(t.add)}</button>`;
   return price + ctl;
 }
 function shopeeHTML(p){
@@ -744,8 +774,8 @@ function cardHTML(p){
   const other = lang === "th" ? p.en : p.th;
   const imgs = p.imgs.map((k,i) => `<img src="img/${p.id}-${k}.jpg" alt="${esc(t.alt[k](p))}" width="720" height="900"${i ? ' loading="lazy"' : ""} decoding="async">`).join("");
   const dots = p.imgs.map((k,i) => `<button type="button" data-dot="${i}" aria-label="${esc(t.photo(i+1, p.imgs.length))}"${i ? "" : ' aria-current="true"'}></button>`).join("");
-  const meta = [t.net(p.size), t.lot, p.nuts ? t.nuts : ""].filter(Boolean).join(" · ");
-  return `<article class="card${p.sig ? " sig" : ""}${qty[p.id] ? " on" : ""}" id="p-${p.id}" data-id="${p.id}">
+  const meta = [t.net([...p.sizes].sort((a,b) => a.g - b.g).map(s => s.g + " g").join(" / ")), t.lot, p.nuts ? t.nuts : ""].filter(Boolean).join(" · ");
+  return `<article class="card${p.sig ? " sig" : ""}${packsOf(p) ? " on" : ""}" id="p-${p.id}" data-id="${p.id}">
     <div class="card-in">
       <div class="media">
         <div class="track">${imgs}</div>
@@ -758,6 +788,7 @@ function cardHTML(p){
         <p class="alt">${esc(other)}</p>
         <p class="meta">${esc(meta)}</p>
         <p class="desc">${esc(p.d[lang])}</p>
+        ${sizesHTML(p)}
         <div class="buy">${buyHTML(p)}</div>
         ${shopeeHTML(p)}
       </div>
@@ -776,10 +807,12 @@ function renderProducts(){
 }
 function updateCard(id, focusSel){
   const p = PRODUCTS.find(x => x.id === id), card = $("p-" + id);
-  card.classList.toggle("on", qty[id] > 0);
+  card.classList.toggle("on", packsOf(p) > 0);
+  const sz = card.querySelector(".sizes");
+  if(sz) sz.outerHTML = sizesHTML(p);
   const buy = card.querySelector(".buy");
   buy.innerHTML = buyHTML(p);
-  if(focusSel){ const f = buy.querySelector(focusSel) || buy.querySelector("button"); if(f) f.focus(); }
+  if(focusSel){ const f = card.querySelector(focusSel) || buy.querySelector("button"); if(f) f.focus(); }
 }
 $("grid").addEventListener("click", e => {
   const dot = e.target.closest("[data-dot]");
@@ -788,11 +821,20 @@ $("grid").addEventListener("click", e => {
     tr.scrollTo({left: Number(dot.dataset.dot) * tr.clientWidth, behavior: reduceMotion ? "auto" : "smooth"});
     return;
   }
+  const sb = e.target.closest("[data-size]");
+  if(sb){
+    const id = sb.closest(".card").dataset.id;
+    sel[id] = sb.dataset.size;
+    updateCard(id, `[data-size="${sb.dataset.size}"]`); save();
+    return;
+  }
   const b = e.target.closest("[data-d]");
   if(!b) return;
   const id = b.closest(".card").dataset.id, d = Number(b.dataset.d);
-  qty[id] = Math.max(0, Math.min(LIMIT, qty[id] + d));
-  updateCard(id, qty[id] === 0 ? ".add" : (d > 0 ? '[data-d="1"]' : '[data-d="-1"]'));
+  const p = PRODUCTS.find(x => x.id === id), s = sizeOf(p, sel[id]), k = lk(p, s);
+  if(d > 0 && packsOf(p) + s.packs > LIMIT) return;
+  qty[k] = Math.max(0, qty[k] + d);
+  updateCard(id, qty[k] === 0 ? ".add" : (d > 0 ? '[data-d="1"]' : '[data-d="-1"]'));
   renderOrder(); save();
 });
 
@@ -800,12 +842,12 @@ $("grid").addEventListener("click", e => {
 function fields(){ return {name:$("f-name").value.trim(), phone:$("f-phone").value.trim(), addr:$("f-addr").value.trim(), note:$("f-note").value.trim()}; }
 function buildMessage(){
   const t = L(), m = M();
-  const items = PRODUCTS.filter(p => qty[p.id] > 0);
+  const items = picked();
   if(!items.length) return "";
   const f = fields();
-  const nm = p => lang === "th" ? `${p.th} ${p.size}` : `${p.en} ${p.size} (${p.th})`;
+  const nm = (p,s) => lang === "th" ? `${p.th} ${t.sz(s)}` : `${p.en} ${t.sz(s)} (${p.th})`;
   return [m.head,
-    ...items.map(p => `- ${nm(p)} x${qty[p.id]} = ${baht(p.price * qty[p.id])}`),
+    ...items.map(({p,s,q}) => `- ${nm(p,s)} x${q} = ${baht(s.price * q)}`),
     `${t.m_ship}: ${baht(SHIP_FEE)}`,
     `${m.total}: ${baht(subtotal() + SHIP_FEE)}`,
     `${t.m_name}: ${f.name || "-"}`,
@@ -816,9 +858,9 @@ function buildMessage(){
 }
 function renderOrder(){
   const t = L(), m = M(), n = count();
-  const items = PRODUCTS.filter(p => qty[p.id] > 0);
+  const items = picked();
   $("lines").innerHTML = items.length
-    ? items.map(p => `<li><span class="nm">${esc(pname(p))} <span class="x">${esc(p.size)} × ${qty[p.id]}</span></span><span class="amt">${baht(p.price * qty[p.id])}</span></li>`).join("")
+    ? items.map(({p,s,q}) => `<li><span class="nm">${esc(pname(p))} <span class="x">${esc(t.sz(s))} × ${q}</span></span><span class="amt">${baht(s.price * q)}</span></li>`).join("")
     : `<li><span class="empty">${esc(t.empty)}</span></li>`;
   $("sums").innerHTML = items.length
     ? `<div class="sumrow"><span>${esc(t.ship)}</span><span class="amt">${baht(SHIP_FEE)}</span></div>
@@ -888,7 +930,8 @@ document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click
 function start(data){
   const st = Object.assign({}, load(), data || {});
   if(st.lang === "en" || st.lang === "th") lang = st.lang;
-  if(st.qty) PRODUCTS.forEach(p => { const v = Number(st.qty[p.id]); if(v > 0) qty[p.id] = Math.min(LIMIT, Math.floor(v)); });
+  if(st.qty){ const q = upgradeQty(st.qty); PRODUCTS.forEach(p => p.sizes.forEach(s => { const v = Number(q[lk(p,s)]); if(v > 0 && packsOf(p) + s.packs <= LIMIT) qty[lk(p,s)] = Math.min(Math.floor((LIMIT - packsOf(p)) / s.packs), Math.floor(v)); })); }
+  if(st.sel) PRODUCTS.forEach(p => { if(p.sizes.some(s => s.k === st.sel[p.id])) sel[p.id] = st.sel[p.id]; });
   if(st.f) FIELDS.forEach(id => { if(typeof st.f[id] === "string") $(id).value = st.f[id]; });
   renderAll();
 }
